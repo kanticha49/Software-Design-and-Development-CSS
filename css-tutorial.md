@@ -232,9 +232,25 @@ div > p {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+[!<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab2</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" class="menu-item">หน้าแรก</a></li>
+            <li><a href="#" class="menu-item" id="active">สินค้า</a></li>
+            <li><a href="#" class="menu-item">เกี่ยวกับเรา</a></li>
+            <li><a href="#" class="menu-item">ติดต่อ</a></li>
+        </ul>
+    </nav>
+</body>
+</html>]
 ```
-[บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+[![alt text](image-1.png)]
 
 
 [](#การทดลองที่-3-การจัดการสีและพื้นหลัง)
@@ -338,9 +354,72 @@ background-size: cover;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ดที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab3</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="menu-item">หน้าแรก</a></li>
+            <li><a href="#" class="menu-item" id="active">สินค้า</a></li>
+            <li><a href="#" class="menu-item">เกี่ยวกับเรา</a></li>
+            <li><a href="#" class="menu-item">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <div class="product-container">
+        
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('../images/BN2V006101.jpg');"></div>
+            <div class="product-info">
+                <h2 class="product-title">สินค้าชิ้นที่ 1</h2>
+                <p class="product-price">฿1,999</p>
+                <p class="product-description">รายละเอียดสินค้าชิ้นที่ 1 ที่น่าสนใจและน่าใช้งาน</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('../images/BN21424781.jpg');"></div>
+            <div class="product-info">
+                <h2 class="product-title">สินค้าชิ้นที่ 2</h2>
+                <p class="product-price">฿2,590</p>
+                <p class="product-description">รายละเอียดสินค้าชิ้นที่ 2 ที่น่าสนใจและน่าใช้งาน</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('../images/images (1).jpg');"></div>
+            <div class="product-info">
+                <h2 class="product-title">สินค้าชิ้นที่ 3</h2>
+                <p class="product-price">฿890</p>
+                <p class="product-description">รายละเอียดสินค้าชิ้นที่ 3 ที่น่าสนใจและน่าใช้งาน</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('../images/images (2).jpg');"></div>
+            <div class="product-info">
+                <h2 class="product-title">สินค้าชิ้นที่ 4</h2>
+                <p class="product-price">฿4,150</p>
+                <p class="product-description">รายละเอียดสินค้าชิ้นที่ 4 ที่น่าสนใจและน่าใช้งาน</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>]
 ```
-[บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+[![alt text](image-2.png)]
 
 [](#การทดลองที่-4-การจัดการขนาดและระยะห่าง)
 ## การทดลองที่ 4: การจัดการขนาดและระยะห่าง
