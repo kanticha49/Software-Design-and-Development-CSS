@@ -965,12 +965,196 @@ blockquote::before {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab3</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="product-grid.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="menu-item">หน้าแรก</a></li>
+            <li><a href="#" class="menu-item" id="active">สินค้า</a></li>
+            <li><a href="#" class="menu-item">เกี่ยวกับเรา</a></li>
+            <li><a href="#" class="menu-item">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <div class="product-container">
+        
+        <div class="product-card">
+            <img class="product-image" src="../product/thgoods_00_482303_3x4.avif" alt="สินค้าชิ้นที่ 1">
+            <div class="product-info">
+                <h2 class="product-title">สินค้าชิ้นที่ 1</h2>
+                <p class="product-price">฿1,999</p>
+                <p class="product-description">รายละเอียดสินค้าชิ้นที่ 1 ที่น่าสนใจและน่าใช้งาน</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img class="product-image" src="../product/thgoods_00_482305_3x4.avif" alt="สินค้าชิ้นที่ 2">
+            <div class="product-info">
+                <h2 class="product-title">สินค้าชิ้นที่ 2</h2>
+                <p class="product-price">฿2,590</p>
+                <p class="product-description">รายละเอียดสินค้าชิ้นที่ 2 ที่น่าสนใจและน่าใช้งาน</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img class="product-image" src="../product/thgoods_09_483972_3x4.avif" alt="สินค้าชิ้นที่ 3">
+            <div class="product-info">
+                <h2 class="product-title">สินค้าชิ้นที่ 3</h2>
+                <p class="product-price">฿890</p>
+                <p class="product-description">รายละเอียดสินค้าชิ้นที่ 3 ที่น่าสนใจและน่าใช้งาน</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img class="product-image" src="../product/thgoods_11_475367_3x4.avif" alt="สินค้าชิ้นที่ 4">
+            <div class="product-info">
+                <h2 class="product-title">สินค้าชิ้นที่ 4</h2>
+                <p class="product-price">฿4,150</p>
+                <p class="product-description">รายละเอียดสินค้าชิ้นที่ 4 ที่น่าสนใจและน่าใช้งาน</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img class="product-image" src="../product/thgoods_57_475367001_3x4.avif" alt="สินค้าชิ้นที่ 5">
+            <div class="product-info">
+                <h2 class="product-title">สินค้าชิ้นที่ 5</h2>
+                <p class="product-price">฿1,250</p>
+                <p class="product-description">รายละเอียดสินค้าชิ้นที่ 5 (ตัวอย่าง) พร้อมคำอธิบายสั้น ๆ</p>
+                <a href="#" class="product-button">เพิ่มลงตะกร้า</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>]
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+[body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; 
+}
+
+nav {
+    background-color: #701f65;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+}
+
+nav > ul > li {
+    margin: 0 10px;
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+}
+
+.menu-item:hover {
+    background-color: #831032;
+    border-radius: 3px;
+}
+
+#active {
+    background-color: #4a2c50;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+
+.product-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 20px; 
+    justify-content: center;
+}
+
+.product-card {
+    width: 250px; 
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background-color: white;
+    transition: transform 0.3s; 
+}
+
+.product-card:hover {
+    transform: translateY(-5px); 
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    background-color: #e0e0e0;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-title {
+    color: #e67dc6;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color: #e73c3c; 
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-description {
+    color: #b98fa9;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.product-button {
+    display: block;
+    background: linear-gradient(to right, #c072a9, #a01662); 
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.product-button:hover {
+    background: linear-gradient(to right, #a01666, #660e44);
+}]
 ```
-[บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+[![alt text](image-7.png)]
 
 
 ### ตัวอย่างการใช้งาน: การสร้างเลย์เอาต์ Modern Dashboard
