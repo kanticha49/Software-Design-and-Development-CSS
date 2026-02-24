@@ -633,12 +633,197 @@ font-weight: bold;
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab5 - Text and Font Management</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <article class="blog-post">
+        <header class="post-header">
+            <h1 class="post-title">วิธีการเขียนบทความที่น่าสนใจ</h1>
+            <div class="post-meta">โพสต์เมื่อ 19 ก.พ. 2026 | โดย กันติชา ย๋องชา</div>
+        </header>
+        
+        <div class="post-content">
+            <p>เนื้อหาบทความที่ดีควรมีความน่าสนใจและเป็นประโยชน์ต่อผู้อ่าน การเขียนบทความให้น่าอ่านนั้นมีหลักการสำคัญหลายประการ</p>
+
+            <h2>1. การเลือกหัวข้อที่น่าสนใจ</h2>
+            <p>หัวข้อที่ดีควรตรงกับความสนใจของกลุ่มเป้าหมาย และมีประโยชน์ต่อผู้อ่าน</p>
+
+            <blockquote>
+                "การเขียนที่ดีไม่ได้เกิดจากพรสวรรค์เพียงอย่างเดียว แต่เกิดจากการฝึกฝนอย่างสม่ำเสมอ"
+            </blockquote>
+
+            <h2>2. การจัดโครงสร้างเนื้อหา</h2>
+            <p>เนื้อหาที่ดีควรมีการจัดลำดับที่เป็นระบบ เข้าใจง่าย และมีความต่อเนื่อง</p>
+        </div>
+    </article>
+</body>
+</html>
+]
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+[* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sarabun', 'Noto Sans Thai', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #f4f7fb 0%, #eef2ff 100%);
+    color: #222;
+    line-height: 1.75;
+    min-height: 100vh;
+    padding: 48px 20px;
+    font-size: 16px;
+}
+
+.blog-post {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.post-header {
+    background: linear-gradient(90deg, #0b5ed7 0%, #4a4ddf 100%);
+    color: white;
+    padding: 56px 40px;
+    text-align: center;
+}
+
+.post-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 1.12;
+    letter-spacing: -0.6px;
+}
+
+.post-meta {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.post-content {
+    padding: 48px 40px;
+}
+
+.post-content p {
+    font-size: 1.125rem; /* ~18px */
+    margin-bottom: 20px;
+    color: #444;
+    line-height: 1.85;
+    text-align: justify;
+}
+
+.post-content h2 {
+    font-size: 2.1rem;
+    color: #0b5ed7;
+    margin: 40px 0 18px 0;
+    font-weight: 700;
+    border-bottom: 3px solid #4a4ddf;
+    padding-bottom: 8px;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.15rem;
+    border-left: 6px solid #0b5ed7;
+    margin: 28px 0;
+    padding: 18px 0 18px 26px;
+    color: #4a4a4a;
+    background: #fbfeff;
+    border-radius: 4px;
+    line-height: 1.8;
+}
+
+blockquote::before {
+    content: '"';
+    font-size: 3rem;
+    color: #667eea;
+    opacity: 0.3;
+    margin-right: 10px;
+    vertical-align: -10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-post {
+        border-radius: 8px;
+    }
+
+    .post-header {
+        padding: 30px 20px;
+    }
+
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-content {
+        padding: 30px 20px;
+    }
+
+    .post-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .post-content h2 {
+        font-size: 1.6rem;
+        margin: 30px 0 15px 0;
+    }
+
+    blockquote {
+        font-size: 1rem;
+        padding: 15px 0 15px 20px;
+        border-left-width: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .post-header {
+        padding: 20px 15px;
+    }
+
+    .post-title {
+        font-size: 1.7rem;
+    }
+
+    .post-meta {
+        font-size: 0.85rem;
+    }
+
+    .post-content {
+        padding: 20px 15px;
+    }
+
+    .post-content p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .post-content h2 {
+        font-size: 1.4rem;
+    }
+}
+]
 ```
-[บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+[![alt text](image-6.png)]
 
 [](#การทดลองที่-6-Layout-และการจัดวางอิลิเมนต์)
 ## การทดลองที่ 6: Layout และการจัดวางอิลิเมนต์
