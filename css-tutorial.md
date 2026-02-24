@@ -1302,10 +1302,201 @@ nav > ul > li {
 
 ### ผลการทดลอง
 ```html
-[วางโค้ด HTML ที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab4 - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <h1>แดชบอร์ด</h1>
+            <nav>
+                <button>โปรไฟล์</button>
+                <button>ออกจากระบบ</button>
+            </nav>
+        </header>
+
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li>หน้าแรก</li>
+                    <li>รายงาน</li>
+                    <li>การตั้งค่า</li>
+                    <li>ผู้ใช้งาน</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>ยอดขายรวม</h3>
+                    <p>฿150,000</p>
+                </div>
+                <div class="stat-card">
+                    <h3>จำนวนออเดอร์</h3>
+                    <p>1,234</p>
+                </div>
+                <div class="stat-card">
+                    <h3>ลูกค้าใหม่</h3>
+                    <p>45</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                    <div class="chart">
+                        <h3>กราฟแสดงยอดขาย</h3>
+                        <canvas id="salesChart" aria-label="กราฟยอดขาย" role="img"></canvas>
+                        <p style="color:var(--muted)">(ข้อมูลตัวอย่างรายเดือน)</p>
+                    </div>
+                    <div class="chart">
+                        <h3>สัดส่วนสินค้าขายดี</h3>
+                        <canvas id="productChart" aria-label="สัดส่วนสินค้าขายดี" role="img"></canvas>
+                        <p style="color:var(--muted)">(ข้อมูลตัวอย่างแบ่งตามสินค้า)</p>
+                    </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Sales line chart
+    (function(){
+        const ctx = document.getElementById('salesChart');
+        if(!ctx) return;
+        new Chart(ctx.getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.'],
+                datasets: [{
+                    label: 'ยอดขาย (฿)',
+                    data: [12000,15000,14000,18000,21000,20000,23000],
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37,99,235,0.12)',
+                    tension: 0.3,
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    })();
+
+    // Product share doughnut chart
+    (function(){
+        const ctx = document.getElementById('productChart');
+        if(!ctx) return;
+        new Chart(ctx.getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['สินค้า A','สินค้า B','สินค้า C'],
+                datasets: [{
+                    data: [45,30,25],
+                    backgroundColor: ['#2563eb','#10b981','#f59e0b'],
+                    hoverOffset: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+    })();
+</script>
+]
 ```
 ```css
-[วางโค้ด CSS ที่นี่]
+[body {
+    margin: 0;
+    padding: 30px;
+    font-family: 'Sarabun', Arial, sans-serif;
+    background: linear-gradient(135deg, #ea66d4 0%, #a24b9e 100%);
+    min-height: 100vh;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    width: 280px;
+    padding: 30px;
+    margin: 15px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 3px solid #ea66b3;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    border-color: #a24b85;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ea66cd;
+    margin: 0 0 15px 0;
+    letter-spacing: 2px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #764ba2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px auto;
+        padding: 20px 10px;
+    }
+
+    .stat-box {
+        width: 100%;
+        padding: 25px;
+        margin: 0;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+}
+]
 ```
-[บันทึกภาพหน้าจอของผลลัพธ์การทดลอง]
+[![alt text](image-8.png)]
 
